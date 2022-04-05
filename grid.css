@@ -1,0 +1,28 @@
+#grid{
+    display: grid;
+    user-select: none;
+}
+
+.block{
+    border: 1px solid lightgray;
+}
+
+.cover{
+    background-color: black;
+}
+
+.end{
+    background-color: red;
+}
+
+.start{
+    background-color: green;
+}
+
+.visit{
+    background-color: blue;
+}
+
+.path{
+    background-color: orange;
+}
