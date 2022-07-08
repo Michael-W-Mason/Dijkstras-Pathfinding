@@ -48,6 +48,8 @@ function updateSettings() {
 
 //Allows User to Place Covers Over Blocks
 let isDrawing = false;
+let moveStart = false;
+let moveEnd = false;
 function mouseOver(element) {
     if (isDrawing) {
         if (element.classList.contains("block")) {
@@ -55,14 +57,26 @@ function mouseOver(element) {
             element.classList.remove("block");
         }
     }
+    if (moveStart){
+        element.classList = "";
+        element.classList.add("start")
+    }
 }
 
 function mouseDown(element) {
     isDrawing = true;
+    if (element.classList.contains("start")){
+        moveStart = true;
+    }
+    if(element.classList.contains("end")){
+        moveEnd = true;
+    }
 }
 
 function mouseup(element) {
     isDrawing = false;
+    moveStart = false;
+    moveEnd = false;
 }
 
 function mouseClick(element){
@@ -112,7 +126,8 @@ function turnMapIntoArray() {
 window.addEventListener('load', generateNewGrid);
 document.getElementById('length-input').addEventListener('change', updateSettings);
 document.getElementById('width-input').addEventListener('change', updateSettings);
-
+document.getElementById('start-but').addEventListener('click', turnMapIntoArray);
+document.getElementById('reset-but').addEventListener('click', generateNewGrid);
 
 
 //Allow Other Scripts access to these variables

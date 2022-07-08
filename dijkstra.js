@@ -90,7 +90,7 @@ function drawDistance(currentNode){
 function drawFunction(currentNode) {
     for(let i = 0; i < visitedList.length; i++){
         let block = document.getElementById("xPos" + visitedList[i].x + "yPos" + visitedList[i].y);
-        if(!block.classList.contains("start") && !block.classList.contains("end")){
+        if(!block.classList.contains("start") && !block.classList.contains("end") && !block.classList.contains("cover")){
             block.classList.add("visit");
         }
     }
@@ -98,7 +98,7 @@ function drawFunction(currentNode) {
     let node = currentNode;
     while(end != "Start"){
         let block = document.getElementById("xPos" + node.x + "yPos" + node.y);
-        if(!block.classList.contains("start") && !block.classList.contains("end")){
+        if(!block.classList.contains("start") && !block.classList.contains("end") && !block.classList.contains("cover")){
             block.classList.add("path");
             block.classList.remove("visit");
         }

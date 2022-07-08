@@ -43,7 +43,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-4 settings d-flex flex-column">
                 <!--Slider for Width and Length-->
                 <div class="length-input">
                     <label for="customRange3" class="form-label">Length</label>
@@ -53,8 +53,11 @@
                     <label for="customRange3" class="form-label">Width</label>
                     <input type="range" class="form-range" min="5" max="20" step="1" id="width-input">
                 </div>
-                <input type="radio" class="btn-check" name="options" id="dijkstra" autocomplete="off" checked>
-                <label class="btn btn-secondary" for="dijkstra">Dijkstra</label>
+                <div class="button-group">
+                    <button type="button" id="start-but" class="btn btn-dark">Start</button>
+                    <button type="button" id="reset-but" class="btn btn-dark">Reset Map</button>
+                </div>
+
             </div>
             <div id="grid" class="col-8">
     
